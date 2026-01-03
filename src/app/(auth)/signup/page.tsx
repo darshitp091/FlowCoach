@@ -100,17 +100,17 @@ function SignupContent() {
       <div className="flex w-full flex-col justify-center px-4 py-12 sm:px-6 lg:w-1/2 lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm">
           <div>
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 mb-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-primary-500">
                 <BarChart3 className="h-6 w-6 text-white" />
               </div>
               <span className="text-2xl font-bold text-gray-900">FlowCoach</span>
             </Link>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-medium text-blue-700">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-medium text-blue-700 mb-6">
               <Users className="h-3 w-3" />
               Built for teams of all sizes
             </div>
-            <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
               Start your 7-day trial
             </h2>
             <p className="mt-2 text-sm text-gray-600">
@@ -122,50 +122,56 @@ function SignupContent() {
           </div>
 
           {/* Plan Selector */}
-          <div className="mt-6">
-            <label className="block text-sm font-medium text-gray-700 mb-3">
-              Choose Your Plan (7-day free trial)
+          <div className="mt-8">
+            <label className="block text-sm font-medium text-gray-900 mb-3">
+              Choose Your Plan <span className="text-xs font-normal text-gray-500">(7-day free trial)</span>
             </label>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-2.5">
               {pricingPlans.filter(p => p.id !== 'enterprise' as any).map((plan) => (
                 <button
                   key={plan.id}
                   type="button"
                   onClick={() => setSelectedPlan(plan.id)}
-                  className={`relative p-4 border-2 rounded-lg text-left transition-all ${
+                  className={`relative p-3 border-2 rounded-xl text-left transition-all ${
                     selectedPlan === plan.id
                       ? 'border-brand-primary-500 bg-brand-primary-50 ring-2 ring-brand-primary-200'
                       : 'border-gray-200 hover:border-brand-primary-300'
                   }`}
                 >
                   {plan.popular && (
-                    <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-brand-primary-500 text-white px-2 py-0.5 rounded text-xs font-semibold">
+                    <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-brand-primary-500 text-white px-2 py-0.5 rounded-md text-[10px] font-semibold whitespace-nowrap">
                       Popular
                     </span>
                   )}
-                  <p className="font-bold text-gray-900">{plan.name}</p>
-                  <p className="text-lg font-bold text-brand-primary-600 mt-1">
+                  <p className="font-bold text-sm text-gray-900">{plan.name}</p>
+                  <p className="text-base font-bold text-brand-primary-600 mt-0.5">
                     ₹{plan.price.toLocaleString()}
-                    <span className="text-xs text-gray-500">/mo</span>
+                    <span className="text-[10px] text-gray-500">/mo</span>
                   </p>
-                  <p className="text-xs text-gray-600 mt-1">
+                  <p className="text-[10px] text-gray-600 mt-1 leading-tight">
                     {typeof plan.features[0] === 'string' ? plan.features[0] : plan.features[0]?.text}
                   </p>
                 </button>
               ))}
             </div>
-            <p className="mt-2 text-xs text-gray-500 text-center">
+            <p className="mt-2.5 text-[11px] text-gray-500 text-center leading-relaxed">
               Start with 7-day free trial • No credit card required • Cancel anytime
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-5">
             {/* Role Selection */}
-            <RoleSelector
-              selectedRole={selectedRole}
-              onRoleChange={setSelectedRole}
-              disabled={loading}
-            />
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-3">
+                What's your role? <span className="text-xs font-normal text-gray-500">(You can invite team members later)</span>
+              </label>
+              <RoleSelector
+                selectedRole={selectedRole}
+                onRoleChange={setSelectedRole}
+                disabled={loading}
+              />
+            </div>
+
             <div>
               <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
                 Full name

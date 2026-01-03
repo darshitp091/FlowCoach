@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
                   'Subscriptions are billed monthly or annually in advance',
                   'Payments are processed via Razorpay',
                   'Failed payments may result in service suspension',
-                  'All fees are non-refundable except as stated in Section 3',
+                  'All fees are non-refundable - see No Refunds Policy in Section 3',
                 ],
               },
             ]}
@@ -127,17 +127,18 @@ export default function TermsOfServicePage() {
           {/* Section 3 */}
           <TermsSection
             icon={Shield}
-            title="3. Cancellation & Refunds"
+            title="3. Cancellation & No Refunds Policy"
             content={[
               {
-                subtitle: '3.1 Money-Back Guarantee',
-                text: 'We offer a 7-day money-back guarantee. If you cancel within 7 days of your first payment, we will provide a full refund.',
+                subtitle: '3.1 No Refunds',
+                text: 'All payments are final and non-refundable. Once you purchase a subscription plan, we do not offer refunds under any circumstances, including but not limited to early cancellation, non-usage, or dissatisfaction with the service.',
               },
               {
                 subtitle: '3.2 Cancellation',
                 list: [
                   'You can cancel your subscription at any time from your account settings',
                   'Cancellation takes effect at the end of your current billing period',
+                  'No refunds will be provided for unused time in your billing cycle',
                   'You retain access to your data for 30 days after cancellation',
                   'After 30 days, your data will be permanently deleted',
                 ],

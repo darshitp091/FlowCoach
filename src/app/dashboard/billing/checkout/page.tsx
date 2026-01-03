@@ -269,8 +269,8 @@ function CheckoutContent() {
             {/* Security Notice */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
               <p className="text-sm text-blue-700">
-                <strong>7-Day Money-Back Guarantee</strong><br />
-                Not satisfied? Get a full refund within 7 days, no questions asked.
+                <strong>Secure Payment Processing</strong><br />
+                Your payment information is encrypted and processed securely via Razorpay. All sales are final and non-refundable.
               </p>
             </div>
           </div>

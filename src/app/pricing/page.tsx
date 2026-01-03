@@ -38,12 +38,12 @@ const faqs = [
     answer: 'Yes! We use bank-level encryption and are fully GDPR compliant. Your data is backed up daily and stored securely.',
   },
   {
-    question: 'Do you offer refunds?',
-    answer: 'Yes! We offer a 7-day money-back guarantee. If you\'re not satisfied, we\'ll refund you in full, no questions asked.',
+    question: 'What is your refund policy?',
+    answer: 'All payments are final and non-refundable. We recommend starting with our 7-day free trial to ensure FlowCoach is the right fit for your needs before subscribing.',
   },
   {
     question: 'Can I cancel anytime?',
-    answer: 'Yes, you can cancel your subscription anytime. No cancellation fees, and you\'ll retain access until the end of your billing period.',
+    answer: 'Yes, you can cancel your subscription anytime. No cancellation fees, and you\'ll retain access until the end of your billing period. However, please note that no refunds will be provided for unused time.',
   },
 ];
 
