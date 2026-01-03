@@ -81,7 +81,7 @@ export function CookieConsentBanner() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[9998]"
             onClick={() => !showSettings && setShowBanner(false)}
           />
 
@@ -91,7 +91,8 @@ export function CookieConsentBanner() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-0 left-0 right-0 z-[101] p-4 md:p-6"
+            className="fixed bottom-0 left-0 right-0 z-[9999] p-4 md:p-6"
+            style={{ position: 'fixed' }}
           >
             <div className="mx-auto max-w-6xl">
               <div className="relative bg-white rounded-2xl shadow-2xl border-2 border-gray-200 overflow-hidden">
